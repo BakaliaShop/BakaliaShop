@@ -139,7 +139,7 @@ export default function CategoryPage() {
             {loading ? (
                 <div className="flex justify-center py-20">
                     <motion.div
-                        className="w-12 h-12 border-4 border-product_primary border-t-primary rounded-full"
+                        className="w-12 h-12 border-4 border-gray-200 border-t-secondary rounded-full mx-auto"
                         animate={{ rotate: 360 }}
                         transition={{ repeat: Infinity, duration: 1, ease: 'linear' }}
                     />

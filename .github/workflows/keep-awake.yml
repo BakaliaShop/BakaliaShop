@@ -1,16 +1,28 @@
-# .github/workflows/keep-awake.yml
-name: Keep Render Awake
+name: 🟢 Keep Render Awake
 
 on:
   schedule:
-    - cron: '*/10 * * * *'  # runs every 10 minutes
+    - cron: '*/10 * * * *' # Runs every 10 minutes
 
 jobs:
   ping-render:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Ping Render backend
+      - name: 🕒 Print current UTC time
         run: |
-          curl -fsS https://bakaliashop-8s4w.onrender.com/ \
-            && echo "🟢 Render is awake" \
-            || echo "⚠️ Ping failed"
+          echo "Ping started at: $(date -u)"
+
+      - name: 🌐 Send request to Render backend
+        run: |
+          echo "Pinging https://bakaliashop-8s4w.onrender.com/api..."
+          response=$(curl -s -o /dev/null -w "%{http_code}" https://bakaliashop-8s4w.onrender.com/api)
+
+          if [ "$response" -eq 200 ]; then
+            echo "✅ Backend is awake and responded with status 200"
+          else
+            echo "⚠️ Ping failed. Response code: $response"
+          fi
+
+      - name: 📌 Job complete
+        run: 'echo "Keep-awake job finished at: $(date -u)"'

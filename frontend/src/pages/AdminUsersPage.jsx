@@ -197,7 +197,7 @@ export default function AdminUsersPage() {
       {loading ? (
         <div className="text-center py-10">
           <motion.div
-            className="w-12 h-12 border-4 border-gray-200 border-t-green-500 rounded-full mx-auto"
+            className="w-12 h-12 border-4 border-gray-200 border-t-secondary rounded-full mx-auto"
             animate={{ rotate: 360 }}
             transition={{ repeat: Infinity, duration: 1, ease: 'linear' }}
           />
