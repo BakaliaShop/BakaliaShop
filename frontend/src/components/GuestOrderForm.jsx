@@ -66,19 +66,21 @@ export default function GuestOrderForm({ onSubmit, onCancel, loading }) {
                 <button
                     type="submit"
                     disabled={loading}
-                    className="px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90 disabled:opacity-50 transition"
+                    className="w-[240px] h-[48px] flex items-center justify-center px-4 rounded-lg bg-primary text-white hover:bg-primary/90 disabled:opacity-50 transition text-base"
                 >
-                    {loading ? 'Надсилаємо…' : 'Підтвердити замовлення'}
+                    {loading ? 'Надсилаємо…' : 'Підтвердити'}
                 </button>
                 <button
                     type="button"
                     onClick={onCancel}
                     disabled={loading}
-                    className="px-4 py-2 rounded-lg bg-gray-100 text-text-soft hover:bg-gray-200 disabled:opacity-50 transition"
+                    className="w-[140px] h-[48px] flex items-center justify-center px-4 rounded-lg bg-gray-100 text-text-soft hover:bg-gray-200 disabled:opacity-50 transition text-base"
                 >
                     Скасувати
                 </button>
             </div>
+
+
         </form>
     )
 }

@@ -120,8 +120,12 @@ export default function ProductCard({ product }) {
                 onBlur={() => {
                   if (quantity === '') setQuantity(minOrder)
                 }}
-                className="w-12 h-8 text-center border-x outline-none text-text-main bg-white"
+                className="w-12 h-8 text-center border-x outline-none text-text-main bg-white
+             [appearance:textfield] 
+             [&::-webkit-outer-spin-button]:appearance-none 
+             [&::-webkit-inner-spin-button]:appearance-none"
               />
+
               <button
                 onClick={() => changeQty(1)}
                 className="w-8 h-8 flex items-center justify-center text-text-main hover:bg-secondary/20 transition"

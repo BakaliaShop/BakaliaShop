@@ -112,8 +112,8 @@ export default function CartPage() {
       }
 
       // 🐞 Debug (можна закоментити в проді)
-      console.log('📦 Payload:', payload);
-      console.log('📤 Headers:', headers);
+      // console.log('📦 Payload:', payload);
+      // console.log('📤 Headers:', headers);
 
       // 🚀 Надсилання замовлення
       await api.post('/orders', payload, { headers });
