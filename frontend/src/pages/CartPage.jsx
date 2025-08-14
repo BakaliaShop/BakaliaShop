@@ -140,8 +140,8 @@ export default function CartPage() {
       addNotification('Ваша корзина порожня')
       return
     }
-    if (round1(totalPrice) < 2000) {
-      addNotification('Мінімальна сума замовлення — 2000 ₴')
+    if (round1(totalPrice) < 1500) {
+      addNotification('Мінімальна сума замовлення — 1500 ₴')
       return
     }
     for (const { product, quantity } of cart) {
@@ -406,15 +406,15 @@ export default function CartPage() {
             <div className="text-lg font-semibold">
               Всього: <span className="text-product_primary">{round1(totalPrice)} ₴</span>
             </div>
-            {round1(totalPrice) < 2000 && (
+            {round1(totalPrice) < 1500 && (
               <p className="text-red-500 text-sm">
-                Мінімальне замовлення — 2000 ₴. Додайте ще {round1(2000 - totalPrice)} ₴.
+                Мінімальне замовлення — 1500 ₴. Додайте ще {round1(1500 - totalPrice)} ₴.
               </p>
             )}
             <div className="flex space-x-2">
               <motion.button
                 onClick={handleConfirm}
-                disabled={loading || round1(totalPrice) < 2000}
+                disabled={loading || round1(totalPrice) < 1500}
                 whileTap={{ scale: 0.95 }}
                 className="bg-product_primary text-white px-6 py-2 rounded hover:bg-product_primary-hover disabled:opacity-50"
               >
