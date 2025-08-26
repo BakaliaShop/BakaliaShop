@@ -16,7 +16,7 @@ export default function CategoryPage() {
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
     const [search, setSearch] = useState('')
-    const [sort, setSort] = useState('')
+    const [sort, setSort] = useState('date_new')
 
     const currentCategory = categories.find(c => c.slug === slug)
     if (!currentCategory) {
