@@ -62,12 +62,12 @@ export default function CategoryPage() {
             break
         case 'date_new':
             sorted.sort(
-                (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+                (a, b) => new Date(b.updatedAt) - new Date(a.updatedAt)
             )
             break
         case 'date_old':
             sorted.sort(
-                (a, b) => new Date(a.createdAt) - new Date(b.createdAt)
+                (a, b) => new Date(a.updatedAt) - new Date(b.updatedAt)
             )
             break
         case 'alpha_asc':
